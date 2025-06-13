@@ -16,6 +16,7 @@ def get_users():
 @app.route('/users/getOne/<int:user_id>',methods=['GET'])
 def getOneUser(user_id):
     print(os.getenv('API_URL'))
+    print(os.getenv('API_KEY'))
     user_id=request.view_args.get('user_id')
     present_user=any(user['id']==user_id for user in users)
     if(present_user):
